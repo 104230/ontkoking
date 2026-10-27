@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #f1f1f1;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 32px;
+  background: white;
+}
+
+.logo {
+  font-size: 24px;
+  color: gray;
+}
+
+#search {
+  flex: 1;
+  height: 40px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 8px;
+  background: #f1f1f1;
+}
+
+button {
+  padding: 10px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+}
+
+.dark {
+  background: #222;
+  border-color: #222;
+  color: white;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ddd;
+}
+
+main {
+  padding: 32px;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.filters button {
+  padding: 6px 16px;
+  border-radius: 99px;
+}
+
+.photo {
+  background: #ddd;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+  margin-bottom: 24px;
+  background: white;
+  border-radius: 16px;
+}
+
+.hero .photo {
+  width: 240px;
+  height: 132px;
+  border-radius: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  padding-bottom: 8px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card .photo {
+  height: 130px;
+}
+
+.card h3,
+.card p {
+  margin: 8px 14px 0;
+}
+
+h2, p {
+  margin: 8px 0;
+}
+
+p {
+  color: gray;
+}

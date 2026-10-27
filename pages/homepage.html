@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recepten</title>
+  <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+  <header>
+    <span class="logo">★</span>
+    <input type="text" id="search" placeholder="Zoeken">
+    <button class="dark">+ Recept</button>
+    <div class="avatar"></div>
+  </header>
+
+  <main>
+    <div class="filters">
+      <button class="dark" data-category="alles">Alles</button>
+      <button data-category="ontbijt">Ontbijt</button>
+      <button data-category="diner">Diner</button>
+      <button data-category="dessert">Dessert</button>
+    </div>
+
+    <div class="hero">
+      <div class="photo"></div>
+      <div>
+        <h2>Pompoensoep</h2>
+        <p>Recept van de week</p>
+        <button>Bekijk</button>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card" data-category="diner">
+        <div class="photo"></div>
+        <h3>Pasta pesto</h3>
+        <p>20 min</p>
+      </div>
+      <div class="card" data-category="dessert">
+        <div class="photo"></div>
+        <h3>Appeltaart</h3>
+        <p>90 min</p>
+      </div>
+      <div class="card" data-category="ontbijt">
+        <div class="photo"></div>
+        <h3>Pannenkoeken</h3>
+        <p>30 min</p>
+      </div>
+      <div class="card" data-category="diner">
+        <div class="photo"></div>
+        <h3>Shakshuka</h3>
+        <p>25 min</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="homepage.js"></script>
+</body>
+</html>
