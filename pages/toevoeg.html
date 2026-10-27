@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recept toevoegen</title>
+  <link rel="stylesheet" href="../css/toevoeg.css">
+</head>
+<body>
+  <header>
+    <span class="logo">★</span>
+  </header>
+
+  <main>
+    <label class="photo" id="photo">
+      <span id="plus">+</span>
+      <input type="file" id="file" accept="image/*" hidden>
+    </label>
+
+    <form id="form">
+      <label>Titel</label>
+      <input type="text" id="title">
+
+      <div class="row">
+        <div>
+          <label>Tijd</label>
+          <input type="text">
+        </div>
+        <div>
+          <label>Personen</label>
+          <input type="text">
+        </div>
+      </div>
+
+      <h3>Ingrediënten</h3>
+      <textarea rows="4"></textarea>
+
+      <h3>Bereiding</h3>
+      <textarea rows="6"></textarea>
+
+      <div class="buttons">
+        <a href="../pages/homepage.html" class="button">Annuleren</a>
+        <button type="submit" class="dark">Opslaan</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="../js/toevoeg.js"></script>
+</body>
+</html>
