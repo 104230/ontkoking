@@ -41,10 +41,9 @@ button {
 }
 
 .avatar {
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 17px;
   border-radius: 50%;
-  background: #ddd;
 }
 
 main {
