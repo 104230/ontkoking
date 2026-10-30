@@ -1,49 +1,59 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Recept toevoegen</title>
-  <link rel="stylesheet" href="../css/toevoeg.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recept toevoegen - Ontkoking</title>
+    <link rel="stylesheet" href="../css/toevoeg.css">
+    <script src="../javascript/toevoeg.js" defer></script>
 </head>
 <body>
-  <header>
-  </header>
+    <header></header>
 
-  <main>
-    <label class="photo" id="photo">
-      <span id="plus">+</span>
-      <input type="file" id="file" accept="image/*" hidden>
-    </label>
+    <main>
+        <form id="form" action="../php/recept_toevoegen.php" method="POST" enctype="multipart/form-data">
 
-    <form id="form">
-      <label>Titel</label>
-      <input type="text" id="title">
+            <label class="photo" id="photo" for="file">
+                <span id="plus">+</span>
+                <input type="file" id="file" name="afbeelding" accept="image/jpeg,image/png,image/webp" hidden>
+            </label>
 
-      <div class="row">
-        <div>
-          <label>Tijd</label>
-          <input type="text">
-        </div>
-        <div>
-          <label>Personen</label>
-          <input type="text">
-        </div>
-      </div>
+            <label for="title">Titel</label>
+            <input type="text" id="title" name="naam" maxlength="150" required>
 
-      <h3>Ingrediënten</h3>
-      <textarea rows="4"></textarea>
+            <label for="categorie">Categorie</label>
+            <select id="categorie" name="categorie" required>
+                <option value="">Kies een categorie</option>
+                <option value="Ontbijt">Ontbijt</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Avondeten">Avondeten</option>
+                <option value="Dessert">Dessert</option>
+            </select>
 
-      <h3>Bereiding</h3>
-      <textarea rows="6"></textarea>
+            <div class="row">
+                <div>
+                    <label for="tijd">Tijd (minuten)</label>
+                    <input type="number" id="tijd" name="bereidingstijd" min="1" max="1440" required>
+                </div>
+                <div>
+                    <label for="personen">Personen</label>
+                    <input type="number" id="personen" name="aantal_personen" min="1" max="100" required>
+                </div>
+            </div>
 
-      <div class="buttons">
-        <a href="../pages/homepage.html" class="button">Annuleren</a>
-        <button type="submit" class="dark">Opslaan</button>
-      </div>
-    </form>
-  </main>
+            <h3>Ingrediënten</h3>
+            <textarea id="ingredienten" name="ingredienten" rows="4" required></textarea>
 
-  <script src="../javascript/toevoeg.js"></script>
+            <h3>Bereiding</h3>
+            <textarea id="bereiding" name="bereiding" rows="6" required></textarea>
+
+            <div id="message" role="alert"></div>
+
+            <div class="buttons">
+                <a href="homepage.html" class="button">Annuleren</a>
+                <button type="submit" class="dark">Opslaan</button>
+            </div>
+        </form>
+    </main>
 </body>
 </html>

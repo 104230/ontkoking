@@ -1,17 +1,14 @@
-const form = document.getElementById("form");
 const error = document.getElementById("error");
+const params = new URLSearchParams(window.location.search);
 
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
+if (error) {
+    const errorType = params.get("error");
 
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-
-  if (email === "" || password === "") {
-    error.textContent = "Vul je e-mail en wachtwoord in.";
-    return;
-  }
-
-  error.textContent = "";
-  alert("Ingelogd als " + email);
-});
+    if (errorType === "leeg") {
+        error.textContent = "Vul je e-mail en wachtwoord in.";
+    } else if (errorType === "ongeldig") {
+        error.textContent = "Je e-mailadres of wachtwoord is onjuist.";
+    } else {
+        error.textContent = "";
+    }
+}

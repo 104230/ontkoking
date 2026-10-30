@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account maken - Ontkoking</title>
+    <link rel="stylesheet" href="../css/registreren.css">
+</head>
+<body>
+<main>
+    <h1>Maak je account</h1>
+    <p>Word lid van Ontkoking en deel je favoriete recepten!</p>
+
+    <form action="../php/registreren.php" method="POST">
+        <label for="naam">Naam</label>
+        <input type="text" id="naam" name="naam" required>
+
+        <label for="email">E-mailadres</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="wachtwoord">Wachtwoord</label>
+        <input type="password" id="wachtwoord" name="wachtwoord"
+               minlength="8" required>
+
+        <button type="submit">Account maken</button>
+    </form>
+
+    <p>Heb je al een account?
+        <a href="inlog.html">Log hier in</a>
+    </p>
+
+    <a href="homepage.html">Terug naar de homepage</a>
+</main>
+</body>
+</html>

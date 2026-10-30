@@ -1,99 +1,53 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Recepten</title>
-  <link rel="stylesheet" href="../css/homepage.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recepten - Ontkoking</title>
+    <link rel="stylesheet" href="../css/homepage.css">
 </head>
 <body>
-  <header>
-    <input type="text" id="search" placeholder="Zoeken">
-   <button> <a href="../pages/toevoeg.html">+ Recept</a> </button>
-    <button> <a href="../pages/inlog.html"> <div class="avatar">inlogen</div> </a> </button>
-  </header>
+    <header>
+        <input type="text" id="search" placeholder="Zoeken">
 
-  <main>
-    <div class="filters">
-      <button class="dark" data-category="alles">Alles</button>
-      <button data-category="ontbijt">Ontbijt</button>
-      <button data-category="avondeten">Avondeten</button>
-      <button data-category="dessert">Dessert</button>
-    </div>
+        <button type="button" onclick="window.location.href='toevoeg.html'">
+            + Recept
+        </button>
 
-    <div class="hero">
-      <div class="photo"></div>
-      <div>
-        <h2>Pompoensoep</h2>
-        <p>Recept van de week</p>
-        <button>Bekijk</button>
-      </div>
-    </div>
+        <button type="button" onclick="window.location.href='inlog.html'">
+            <div class="avatar">Inloggen</div>
+        </button>
+    </header>
 
-    <div class="grid">
-      <div class="card" data-category="avondeten">
-        <div class="photo"></div>
-        <h3>Pasta pesto</h3>
-        <p>20 min</p>
-      </div>
-      <div class="card" data-category="dessert">
-        <div class="photo"></div>
-        <h3>Appeltaart</h3>
-        <p>90 min</p>
-      </div>
-      <div class="card" data-category="ontbijt">
-        <div class="photo"></div>
-        <h3>Pannenkoeken</h3>
-        <p>30 min</p>
-      </div>
-      <div class="card" data-category="avondeten">
-        <div class="photo"></div>
-        <h3>Shakshuka</h3>
-        <p>25 min</p>
-      </div>
-      <div class="card" data-category="ontbijt">
-        <div class="photo"></div>
-        <h3>Havermout</h3>
-        <p>10 min</p>
+    <main>
+        <div class="filters">
+            <button class="dark" data-category="alles">Alles</button>
+            <button data-category="ontbijt">Ontbijt</button>
+            <button data-category="lunch">Lunch</button>
+            <button data-category="avondeten">Avondeten</button>
+            <button data-category="dessert">Dessert</button>
         </div>
-        <div class="card" data-category="avondeten">
-        <div class="photo"></div>
-        <h3>Bami</h3>
-        <p>30 min</p>
-        </div>
-                <div class="card" data-category="avondeten">
-        <div class="photo"></div>
-        <h3>Pizza</h3>
-        <p>45 min</p>
-        </div>
-        <div class="card" data-category="avondeten">
-        <div class="photo"></div>
-        <h3>Kapsalon</h3>
-        <p>25 min</p>
-        </div>
-        <div class="card" data-category="avondeten">
-        <div class="photo"></div>
-        <h3>Saoto soep</h3>
-        <p>1 tot 1:30 uur</p>
-        </div>
-        <div class="card" data-category="avondeten">
-        <div class="photo"></div>
-        <h3>ijs</h3>
-        <p>4 tot 6 uur</p>
-        </div>
-        <div class="card" data-category="avondeten">
-        <div class="photo"></div>
-        <h3>Spaghetti bolognese</h3>
-        <p>30 tot 45 min</p>
-        </div>
-        <div class="card" data-category="avondeten">
-        <div class="photo"></div>
-        <h3>Catchupa</h3>
-        <p>45 min</p>
-        </div>
-    </div>
-  </main>
 
-  <script src="../javascript/homepage.js"></script>
+        <div class="hero">
+            <div class="photo"></div>
+
+            <div>
+                <h2>Laat Gen Z Koken!</h2>
+                <p>Ontdek recepten en deel je eigen gerechten.</p>
+
+                <button type="button" onclick="window.location.href='toevoeg.html'">
+                    Recept toevoegen
+                </button>
+            </div>
+        </div>
+
+        <h2>Alle recepten</h2>
+
+        <div class="grid">
+            <p>Recepten laden...</p>
+        </div>
+    </main>
+
+    <script src="../javascript/homepage.js"></script>
 </body>
 </html>
