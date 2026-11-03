@@ -1,11 +1,13 @@
+// php start: php -S 127.0.0.1:8000
+
+
 const search = document.getElementById("search");
 const buttons = document.querySelectorAll(".filters button");
 const grid = document.querySelector(".grid");
-
+console.log("Zoekbalk gevonden:", search);
 let category = "alles";
 let cards = [];
 
-// Recepten ophalen uit de database
 async function laadRecepten() {
     try {
         const response = await fetch("../php/recepten_ophalen.php");
@@ -16,11 +18,9 @@ async function laadRecepten() {
 
         const recepten = await response.json();
 
-        // Oude recepten verwijderen
         grid.innerHTML = "";
         cards = [];
 
-        // Controleren of er recepten zijn
         if (recepten.length === 0) {
             grid.innerHTML = "<p>Er zijn nog geen recepten toegevoegd.</p>";
             return;
@@ -50,29 +50,29 @@ async function laadRecepten() {
                 card.appendChild(photo);
             }
 
-            // Titel
+           
             const title = document.createElement("h3");
             title.textContent = recept.naam;
             card.appendChild(title);
 
-            // Bereidingstijd
+            
             const time = document.createElement("p");
             time.textContent = "⏱️ " + recept.bereidingstijd + " min";
             card.appendChild(time);
 
-            // Categorie
+            
             const categoryText = document.createElement("p");
             categoryText.textContent = recept.categorie;
             card.appendChild(categoryText);
 
-            // Maker van het recept
+            
             if (recept.gebruiker_naam) {
                 const maker = document.createElement("p");
                 maker.textContent = "Door " + recept.gebruiker_naam;
                 card.appendChild(maker);
             }
 
-            // Hele receptkaart klikbaar maken
+            
             card.style.cursor = "pointer";
             card.setAttribute("role", "link");
             card.setAttribute("tabindex", "0");
@@ -86,7 +86,7 @@ async function laadRecepten() {
 
             card.addEventListener("click", openRecept);
 
-            // Openen met Enter of spatie
+            
             card.addEventListener("keydown", function (event) {
                 if (event.key === "Enter" || event.key === " ") {
                     event.preventDefault();
@@ -94,12 +94,11 @@ async function laadRecepten() {
                 }
             });
 
-            // Kaart toevoegen aan de homepage
             grid.appendChild(card);
             cards.push(card);
         });
 
-        // Filters toepassen
+        
         showCards();
 
     } catch (error) {
@@ -110,25 +109,35 @@ async function laadRecepten() {
     }
 }
 
-// Recepten zoeken en filteren
+
 function showCards() {
     const text = search.value.toLowerCase().trim();
 
     cards.forEach(function (card) {
         const title = card.querySelector("h3").textContent.toLowerCase();
+        const categoryName = card.dataset.category;
 
-        const okCategory =
-            category === "alles" ||
-            card.dataset.category === category;
-
+        
         const okText = title.includes(text);
 
-        card.style.display =
-            okCategory && okText ? "block" : "none";
+       
+        const okCategory =
+            category === "alles" ||
+            categoryName === category;
+
+        
+        if (okText && okCategory) {
+            card.style.display = "";
+        } else {
+            card.style.display = "none";
+        }
     });
 }
 
-// Categorieknoppen
+search.addEventListener("input", function () {
+    showCards();
+});
+
 buttons.forEach(function (button) {
     button.addEventListener("click", function () {
         buttons.forEach(function (b) {
@@ -143,8 +152,6 @@ buttons.forEach(function (button) {
     });
 });
 
-// Zoekbalk
-search.addEventListener("input", showCards);
 
-// Recepten laden zodra de homepage opent
 laadRecepten();
+

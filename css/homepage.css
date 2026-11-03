@@ -110,3 +110,25 @@ h2, p {
 p {
   color: gray;
 }
+
+
+.admin-link {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 16px;
+  background: #0b0b0b;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: background 0.2s, transform 0.2s;
+  z-index: 1000;
+}
+
+.admin-link:hover {
+  background: #090909;
+  transform: translateY(-2px);
+}

@@ -2,7 +2,7 @@
 $host = '127.0.0.1';
 $dbname = 'ontkoking';
 $username = 'root';
-$password = ''; // Alleen als root lokaal geen wachtwoord heeft
+$password = ''; 
 
 try {
     $pdo = new PDO(
